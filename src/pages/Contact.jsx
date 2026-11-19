@@ -9,8 +9,8 @@ function Contact() {
 
       <div className="mx-auto mt-9 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
         <h3 className="m-0 rounded-xl border border-slate-200 bg-white p-5 text-sm font-bold">📞 +91 98765 43210</h3>
-        <h3 className="m-0 break-words rounded-xl border border-slate-200 bg-white p-5 text-sm font-bold">✉️ electronicshop@gmail.com</h3>
-        <h3 className="m-0 rounded-xl border border-slate-200 bg-white p-5 text-sm font-bold">📍 Your Shop Address, India</h3>
+        <h3 className="m-0 break-words rounded-xl border border-slate-200 bg-white p-5 text-sm font-bold">✉️ electrohub@gmail.com</h3>
+        <h3 className="m-0 rounded-xl border border-slate-200 bg-white p-5 text-sm font-bold">📍 Mysuru, Karnataka , India</h3>
       </div>
 
       
