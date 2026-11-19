@@ -1,0 +1,786 @@
+
+/* =====================================
+   1. GLOBAL STYLES
+===================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --dark: #101827;
+  --dark-light: #1e293b;
+  --text: #172033;
+  --muted: #64748b;
+  --light: #f5f7fb;
+  --white: #ffffff;
+  --border: #e5eaf1;
+  --radius: 14px;
+  --shadow: 0 10px 35px rgba(15, 23, 42, 0.07);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.2;
+}
+
+::selection {
+  background: #bfdbfe;
+  color: #1e3a8a;
+}
+
+/* =====================================
+   2. NAVBAR
+===================================== */
+
+.navbar {
+  width: 100%;
+  min-height: 82px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 29px;
+  font-weight: 800;
+  color: var(--dark);
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  transition: 0.3s;
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--primary);
+  bottom: -10px;
+  left: 0;
+}
+
+.nav-button {
+  padding: 12px 22px;
+  background: var(--primary);
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.nav-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* =====================================
+   3. BUTTONS
+===================================== */
+
+.primary-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+}
+
+/* =====================================
+   4. HERO SECTION
+===================================== */
+
+.hero {
+  background: var(--dark);
+  color: white;
+  padding: 90px 7%;
+  min-height: 570px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 570px;
+}
+
+.section-label {
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.hero .section-label {
+  color: #60a5fa;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 5vw, 65px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: #60a5fa;
+}
+
+.hero-content > p:not(.section-label) {
+  color: #cbd5e1;
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 32px;
+  max-width: 500px;
+}
+
+.hero > img {
+  flex: 1;
+  width: 48%;
+  height: 390px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+/* =====================================
+   5. COMMON SECTIONS
+===================================== */
+
+.section {
+  padding: 90px 7%;
+  text-align: center;
+}
+
+.section > h2 {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 45px;
+}
+
+.section > p:not(.section-label) {
+  color: var(--muted);
+}
+
+/* =====================================
+   6. CATEGORIES
+===================================== */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 35px;
+}
+
+.category-card {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  padding: 38px 20px;
+  border-radius: var(--radius);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.category-card:hover {
+  background: white;
+  border-color: var(--primary);
+  transform: translateY(-7px);
+  box-shadow: var(--shadow);
+}
+
+.category-card span {
+  font-size: 45px;
+  display: block;
+  margin-bottom: 18px;
+}
+
+.category-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.category-card p {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =====================================
+   7. PRODUCTS
+===================================== */
+
+.products {
+  background: var(--light);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  text-align: left;
+  margin: 30px 0;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--shadow);
+}
+
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: #f1f5f9;
+  transition: 0.4s;
+}
+
+.product-card:hover img {
+  transform: scale(1.04);
+}
+
+.product-info {
+  padding: 22px;
+}
+
+.product-info p {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.product-info h3 {
+  font-size: 19px;
+  margin-bottom: 12px;
+}
+
+.product-info h4 {
+  color: var(--primary);
+  font-size: 21px;
+  margin-bottom: 18px;
+}
+
+.product-info a {
+  display: inline-block;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.product-info a:hover {
+  color: var(--primary-dark);
+}
+
+/* =====================================
+   8. SEARCH AND FILTER
+===================================== */
+
+.search-input {
+  width: 100%;
+  max-width: 550px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  margin: 0 auto 28px;
+  display: block;
+  background: white;
+  transition: 0.3s;
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.1);
+}
+
+.filter-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.filter-buttons button {
+  padding: 11px 22px;
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--text);
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.filter-buttons button:hover,
+.filter-buttons button.active-filter {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* =====================================
+   9. PRODUCT DETAILS
+===================================== */
+
+.product-details {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  padding: 90px 10%;
+  min-height: 550px;
+}
+
+.product-details img {
+  width: 48%;
+  height: 430px;
+  object-fit: cover;
+  border-radius: 18px;
+  background: var(--light);
+}
+
+.product-details > div {
+  flex: 1;
+}
+
+.product-details h1 {
+  font-size: 42px;
+  margin: 20px 0;
+}
+
+.product-details h2 {
+  color: var(--primary);
+  font-size: 30px;
+  margin-bottom: 22px;
+}
+
+.product-details p:not(.section-label) {
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 30px;
+}
+
+/* =====================================
+   10. ABOUT PAGE
+===================================== */
+
+.about {
+  display: flex;
+  align-items: center;
+  gap: 65px;
+  text-align: left;
+}
+
+.about > div {
+  flex: 1;
+}
+
+.about h1 {
+  font-size: 43px;
+  margin-bottom: 25px;
+}
+
+.about p:not(.section-label) {
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 18px;
+}
+
+.about > img {
+  flex: 1;
+  width: 48%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+/* =====================================
+   11. SERVICES
+===================================== */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  margin-top: 35px;
+  text-align: center;
+}
+
+.service-card,
+.service-grid > div {
+  padding: 40px 30px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: 0.3s;
+}
+
+.service-card:hover,
+.service-grid > div:hover {
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.service-card span,
+.service-grid > div > span {
+  font-size: 40px;
+}
+
+.service-card h3,
+.service-grid h3 {
+  font-size: 21px;
+  margin: 18px 0 12px;
+}
+
+.service-card p,
+.service-grid p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* =====================================
+   12. HOME BANNER
+===================================== */
+
+.home-banner {
+  background: linear-gradient(120deg, #101827, #1e40af);
+  padding: 75px 20px;
+  text-align: center;
+  color: white;
+}
+
+.home-banner h2 {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.home-banner p {
+  color: #cbd5e1;
+  margin-bottom: 28px;
+}
+
+/* =====================================
+   13. CONTACT
+===================================== */
+
+.contact-page,
+.contact {
+  background: #f5f7fb;
+}
+
+.contact-page > p:not(.section-label),
+.contact > p:not(.section-label) {
+  color: var(--muted);
+}
+
+.contact-details {
+  margin: 35px auto;
+}
+
+.contact-details h3,
+.contact-details p {
+  margin-bottom: 18px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* =====================================
+   14. FOOTER
+===================================== */
+
+.footer,
+footer {
+  background: #101827;
+  color: white;
+  padding: 55px 7% 30px;
+  text-align: center;
+}
+
+.footer h2,
+footer h2 {
+  font-size: 29px;
+  margin-bottom: 12px;
+}
+
+.footer span,
+footer span {
+  color: #60a5fa;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.footer-links a {
+  color: #cbd5e1;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #60a5fa;
+}
+
+.footer p,
+footer p {
+  color: #94a3b8;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+/* =====================================
+   15. RESPONSIVE TABLET
+===================================== */
+
+@media (max-width: 1024px) {
+
+  .navbar {
+    padding: 18px 4%;
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    gap: 17px;
+  }
+
+  .hero {
+    padding: 70px 5%;
+    gap: 35px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section {
+    padding: 70px 5%;
+  }
+
+}
+
+/* =====================================
+   16. RESPONSIVE MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px 20px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .nav-button {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 65px 6%;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content > p:not(.section-label) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero > img {
+    width: 100%;
+    height: 280px;
+  }
+
+  .section {
+    padding: 65px 6%;
+  }
+
+  .section > h2 {
+    font-size: 30px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-details,
+  .about {
+    flex-direction: column;
+    padding: 60px 6%;
+    text-align: center;
+  }
+
+  .product-details img,
+  .about > img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .about h1,
+  .product-details h1 {
+    font-size: 32px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* =====================================
+   17. SMALL MOBILE
+===================================== */
+
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero > img {
+    height: 230px;
+  }
+
+  .product-grid,
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card img {
+    height: 240px;
+  }
+
+  .section > h2 {
+    font-size: 27px;
+  }
+
+  .home-banner h2 {
+    font-size: 28px;
+  }
+
+  .filter-buttons button {
+    padding: 9px 15px;
+  }
+
+  .footer-links {
+    gap: 15px;
+  }
+
+}
