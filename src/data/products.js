@@ -1,3 +1,9 @@
+import laptopImage from "../assets/laptop-01.jpg";
+import headPhoneImage from "../assets/headphone-01.jpg";
+import smartPhoneImage from "../assets/mobile-01.jpg";
+import smartWatchImage from "../assets/smartwatch-01.jpg";
+import gamingLaptopImage from "../assets/gaminglaptop-01.jpg";
+import bluetoothSpeakerImage from "../assets/bluetoothspeaker-01.jpg";
 
 const products = [
   {
@@ -6,7 +12,7 @@ const products = [
     category: "Laptops",
     price: 89999,
     description: "Powerful and lightweight laptop for work and creativity.",
-    image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=700"
+    image: laptopImage
   },
   {
     id: 2,
@@ -14,7 +20,7 @@ const products = [
     category: "Accessories",
     price: 4999,
     description: "Premium sound quality with comfortable wireless listening.",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=700"
+    image: headPhoneImage
   },
   {
     id: 3,
@@ -22,7 +28,7 @@ const products = [
     category: "Mobiles",
     price: 24999,
     description: "Modern smartphone with a brilliant display and camera.",
-    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=700"
+    image: smartPhoneImage
   },
   {
     id: 4,
@@ -30,7 +36,7 @@ const products = [
     category: "Accessories",
     price: 3999,
     description: "Stay connected with smart notifications and fitness tracking.",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700"
+    image: smartWatchImage
   },
   {
     id: 5,
@@ -38,7 +44,7 @@ const products = [
     category: "Laptops",
     price: 74999,
     description: "Performance laptop for gaming and demanding applications.",
-    image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=700"
+    image: gamingLaptopImage
   },
   {
     id: 6,
@@ -46,7 +52,7 @@ const products = [
     category: "Accessories",
     price: 1999,
     description: "Portable speaker with rich and powerful audio.",
-    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=700"
+    image: bluetoothSpeakerImage
   }
 ];
 
