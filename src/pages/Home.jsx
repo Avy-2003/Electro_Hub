@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import products from "../data/products";
 import ProductCard from "../components/ProductCard";
+import homeimage from "../assets/homepage_img.jpg";
 
 function Home() {
   return (
@@ -29,7 +30,7 @@ function Home() {
         <div className="relative mx-auto w-full max-w-2xl">
           <img
             className="h-[260px] w-full rounded-2xl object-cover shadow-2xl shadow-slate-900/15 sm:h-[340px] lg:h-[clamp(330px,37vw,455px)]"
-            src="/src/assets/homepage_img.jpg"
+            src={homeimage}
             alt="A curated collection of modern electronic devices"
           />
           <div className="absolute bottom-3 right-2 flex min-w-0 items-center gap-3 rounded-xl border border-white/80 bg-white/95 p-3 shadow-xl sm:bottom-6 sm:right-[-17px] sm:min-w-[208px] sm:p-4">
